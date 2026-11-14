@@ -1,0 +1,953 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="900"
+     height="305"
+     viewBox="0 0 900 305"
+     role="img">
+
+  <title>Welcome to FFlushhh's GitHub!</title>
+  <desc>
+    技術を組み合わせ、新しいゲーム・VR体験へ。
+    ゲーム風タイトル、脳波、ピクセルパーティクル、
+    フレーム発光、実績解除、隠しキャラクターのアニメーション。
+  </desc>
+
+  <!-- ====================================== -->
+  <!-- フォントと基本スタイル                 -->
+  <!-- ====================================== -->
+
+  <style>
+    .welcome-text {
+      font-family:
+        "Press Start 2P",
+        "Courier New",
+        monospace;
+      font-size: 23px;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-anchor: middle;
+      paint-order: stroke fill;
+      stroke-linejoin: round;
+    }
+
+    .game-text {
+      font-family:
+        "GenEi Kiwami Gothic",
+        "源暎きわみゴ",
+        "Hiragino Kaku Gothic ProN",
+        "Meiryo",
+        sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.4px;
+      paint-order: stroke fill;
+      stroke-linejoin: round;
+    }
+
+    .pixel-ui {
+      font-family:
+        "Courier New",
+        monospace;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+  </style>
+
+  <!-- ====================================== -->
+  <!-- 定義                                  -->
+  <!-- ====================================== -->
+
+  <defs>
+
+    <!-- 1行目：0.8〜1.4秒 -->
+    <!--
+      基本幅を完成状態にすることで、
+      アニメーション非対応時も文字を表示する。
+    -->
+    <clipPath id="reveal1">
+      <rect x="50" y="24"
+            width="800" height="76">
+        <animate
+          attributeName="width"
+          values="0;0;800"
+          keyTimes="0;0.571429;1"
+          begin="0s"
+          dur="1.4s"
+          fill="freeze"/>
+      </rect>
+    </clipPath>
+
+    <!-- 2行目：1.4〜2.0秒 -->
+    <clipPath id="reveal2">
+      <rect x="100" y="97"
+            width="700" height="64">
+        <animate
+          attributeName="width"
+          values="0;0;700"
+          keyTimes="0;0.7;1"
+          begin="0s"
+          dur="2s"
+          fill="freeze"/>
+      </rect>
+    </clipPath>
+
+    <!-- フレーム内の光を切り抜く -->
+    <clipPath id="frameClip">
+      <rect x="10" y="8"
+            width="880" height="164"
+            rx="12"/>
+    </clipPath>
+
+    <!-- シャイン用グラデーション -->
+    <linearGradient id="shineGrad"
+                    x1="0%" y1="0%"
+                    x2="100%" y2="0%">
+      <stop offset="0%"
+            stop-color="#FFFFFF"
+            stop-opacity="0"/>
+      <stop offset="50%"
+            stop-color="#FFFFFF"
+            stop-opacity="0.85"/>
+      <stop offset="100%"
+            stop-color="#FFFFFF"
+            stop-opacity="0"/>
+    </linearGradient>
+
+  </defs>
+
+  <!-- ====================================== -->
+  <!-- 1. Welcomeタイトル                    -->
+  <!-- ====================================== -->
+
+  <!--
+    0.0〜0.4秒でフェードイン。
+    基本opacityは1なので、
+    アニメーション非対応時も見える。
+  -->
+
+  <g opacity="1">
+
+    <animate
+      attributeName="opacity"
+      from="0"
+      to="1"
+      begin="0s"
+      dur="0.4s"
+      fill="freeze"/>
+
+    <!-- 左のピクセルスター -->
+    <g fill="#FF00FF">
+      <path d="
+        M60 24 H66 V34
+        H76 V40
+        H66 V50
+        H60 V40
+        H50 V34
+        H60 Z"/>
+
+      <animate
+        attributeName="opacity"
+        values="0.5;1;0.5"
+        begin="0.4s"
+        dur="3s"
+        repeatCount="indefinite"/>
+    </g>
+
+    <!-- 右のピクセルスター -->
+    <g fill="#B47AFF">
+      <path d="
+        M834 29 H840 V39
+        H850 V45
+        H840 V55
+        H834 V45
+        H824 V39
+        H834 Z"/>
+
+      <animate
+        attributeName="opacity"
+        values="1;0.45;1"
+        begin="0.4s"
+        dur="3.4s"
+        repeatCount="indefinite"/>
+    </g>
+
+    <!-- Welcome文字 -->
+    <text x="450" y="61"
+          class="welcome-text"
+          fill="#FFF0FF"
+          stroke="#2D1647"
+          stroke-width="5">
+      <tspan>Welcome to </tspan><tspan fill="#FF79DF">FFlushhh</tspan><tspan>'s GitHub!</tspan>
+    </text>
+
+    <!-- 下部のゲームUI風ライン -->
+    <path d="M175 87 H725"
+          fill="none"
+          stroke="#8A2BE2"
+          stroke-width="2"/>
+
+    <rect x="172" y="84"
+          width="6" height="6"
+          fill="#FF00FF"/>
+
+    <rect x="722" y="84"
+          width="6" height="6"
+          fill="#FF00FF"/>
+
+    <!-- ラインの中央に小さなアクセント -->
+    <rect x="446" y="83"
+          width="8" height="8"
+          fill="#FFB8FF"/>
+
+  </g>
+
+  <!-- ====================================== -->
+  <!-- 2. プロフィールバナー全体             -->
+  <!-- ====================================== -->
+
+  <!--
+    既存の900x180バナーを
+    下方向に113px移動して配置。
+  -->
+
+  <g transform="translate(0 113)">
+
+    <!-- ==================================== -->
+    <!-- 2-1. 背景・フレーム                  -->
+    <!-- ==================================== -->
+
+    <g transform="translate(450 90)">
+
+      <!--
+        2.0〜2.5秒で中央から拡大。
+        静的表示時はscale(1)。
+      -->
+
+      <g transform="scale(1)">
+
+        <animateTransform
+          attributeName="transform"
+          type="scale"
+          values="0 0;0 0;1 1"
+          keyTimes="0;0.8;1"
+          begin="0s"
+          dur="2.5s"
+          fill="freeze"/>
+
+        <!-- 背景 -->
+        <rect x="-440" y="-82"
+              width="880" height="164"
+              rx="12"
+              fill="#17112B"/>
+
+        <!-- メインフレーム -->
+        <rect x="-440" y="-82"
+              width="880" height="164"
+              rx="12"
+              fill="none"
+              stroke="#8A2BE2"
+              stroke-width="3"/>
+
+        <!-- サブフレーム -->
+        <rect x="-430" y="-72"
+              width="860" height="144"
+              rx="8"
+              fill="none"
+              stroke="#4F2A7B"
+              stroke-width="1.2"
+              opacity="0.55"/>
+
+        <!-- 四隅の装飾 -->
+        <g fill="none"
+           stroke="#FF00FF"
+           stroke-width="4"
+           stroke-linecap="round">
+
+          <path d="
+            M-427 -55 V-69 H-412
+            M412 -69 H427 V-55
+            M-427 55 V69 H-412
+            M412 69 H427 V55"/>
+
+          <!-- 完成後に一瞬だけ発光 -->
+          <animate
+            attributeName="opacity"
+            values="1;0.35;1"
+            begin="2.53s"
+            dur="0.3s"
+            fill="freeze"/>
+        </g>
+
+        <!-- 発光フレーム -->
+        <rect x="-440" y="-82"
+              width="880" height="164"
+              rx="12"
+              fill="none"
+              stroke="#FFBFFF"
+              stroke-width="6"
+              opacity="0">
+
+          <animate
+            attributeName="opacity"
+            values="0;0.95;0"
+            begin="2.5s"
+            dur="0.3s"
+            fill="freeze"/>
+        </rect>
+
+      </g>
+    </g>
+
+    <!-- ==================================== -->
+    <!-- 2-2. フレーム上を走るシャイン        -->
+    <!-- ==================================== -->
+
+    <g clip-path="url(#frameClip)"
+       opacity="0">
+
+      <animate
+        attributeName="opacity"
+        values="0;1;1;0"
+        begin="2.5s"
+        dur="0.4s"
+        fill="freeze"/>
+
+      <rect x="-220" y="-20"
+            width="110" height="260"
+            fill="url(#shineGrad)"
+            transform="rotate(18 450 90)">
+
+        <animate
+          attributeName="x"
+          from="-220"
+          to="980"
+          begin="2.5s"
+          dur="0.4s"
+          fill="freeze"/>
+      </rect>
+    </g>
+
+    <!-- ==================================== -->
+    <!-- 2-3. 脳波演出                       -->
+    <!-- ==================================== -->
+
+    <g fill="none"
+       stroke="#FF00FF"
+       stroke-width="3"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       opacity="0">
+
+      <path d="
+        M225 88
+        H275
+        L290 76
+        L306 101
+        L324 51
+        L347 116
+        L365 77
+        L378 88
+        H430
+        L447 80
+        L464 96
+        L480 68
+        L497 103
+        L515 88
+        H560"
+        stroke-dasharray="620"
+        stroke-dashoffset="620">
+
+        <animate
+          attributeName="stroke-dashoffset"
+          from="620"
+          to="0"
+          begin="0.43s"
+          dur="0.3s"
+          fill="freeze"/>
+      </path>
+
+      <animate
+        attributeName="opacity"
+        values="0;1;1;0"
+        begin="0.4s"
+        dur="0.42s"
+        fill="freeze"/>
+    </g>
+
+    <!-- ==================================== -->
+    <!-- 2-4. 脳波からピクセルへの変化        -->
+    <!-- ==================================== -->
+
+    <g opacity="0">
+
+      <g fill="#FF00FF">
+        <rect x="557" y="84"
+              width="7" height="7"/>
+        <rect x="577" y="75"
+              width="6" height="6"/>
+        <rect x="596" y="91"
+              width="5" height="5"/>
+      </g>
+
+      <g fill="#8A2BE2">
+        <rect x="570" y="95"
+              width="6" height="6"/>
+        <rect x="592" y="68"
+              width="7" height="7"/>
+        <rect x="615" y="85"
+              width="5" height="5"/>
+        <rect x="631" y="77"
+              width="4" height="4"/>
+      </g>
+
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        from="-22 0"
+        to="12 0"
+        begin="0.55s"
+        dur="0.35s"
+        fill="freeze"/>
+
+      <animate
+        attributeName="opacity"
+        values="0;1;1;0"
+        begin="0.55s"
+        dur="0.38s"
+        fill="freeze"/>
+    </g>
+
+    <!-- ==================================== -->
+    <!-- 2-5. 1行目のピクセルパーティクル     -->
+    <!-- ==================================== -->
+
+    <g fill="#FF6BFF">
+
+      <rect x="218" y="63"
+            width="5" height="5"
+            opacity="0">
+
+        <animate
+          attributeName="opacity"
+          values="0;1;0"
+          begin="0.9s"
+          dur="0.4s"
+          fill="freeze"/>
+
+        <animateTransform
+          attributeName="transform"
+          type="translate"
+          values="0 0;-18 -14"
+          begin="0.9s"
+          dur="0.4s"
+          fill="freeze"/>
+      </rect>
+
+      <rect x="270" y="55"
+            width="4" height="4"
+            opacity="0">
+
+        <animate
+          attributeName="opacity"
+          values="0;1;0"
+          begin="0.95s"
+          dur="0.4s"
+          fill="freeze"/>
+
+        <animateTransform
+          attributeName="transform"
+          type="translate"
+          values="0 0;-10 -18"
+          begin="0.95s"
+          dur="0.4s"
+          fill="freeze"/>
+      </rect>
+
+      <rect x="605" y="55"
+            width="4" height="4"
+            opacity="0">
+
+        <animate
+          attributeName="opacity"
+          values="0;1;0"
+          begin="1.05s"
+          dur="0.4s"
+          fill="freeze"/>
+
+        <animateTransform
+          attributeName="transform"
+          type="translate"
+          values="0 0;14 -16"
+          begin="1.05s"
+          dur="0.4s"
+          fill="freeze"/>
+      </rect>
+
+      <rect x="664" y="64"
+            width="5" height="5"
+            opacity="0">
+
+        <animate
+          attributeName="opacity"
+          values="0;1;0"
+          begin="1.1s"
+          dur="0.4s"
+          fill="freeze"/>
+
+        <animateTransform
+          attributeName="transform"
+          type="translate"
+          values="0 0;18 -8"
+          begin="1.1s"
+          dur="0.4s"
+          fill="freeze"/>
+      </rect>
+    </g>
+
+    <g fill="#A96BFF">
+
+      <rect x="235" y="85"
+            width="4" height="4"
+            opacity="0">
+
+        <animate
+          attributeName="opacity"
+          values="0;1;0"
+          begin="0.98s"
+          dur="0.45s"
+          fill="freeze"/>
+
+        <animateTransform
+          attributeName="transform"
+          type="translate"
+          values="0 0;-15 12"
+          begin="0.98s"
+          dur="0.45s"
+          fill="freeze"/>
+      </rect>
+
+      <rect x="640" y="83"
+            width="4" height="4"
+            opacity="0">
+
+        <animate
+          attributeName="opacity"
+          values="0;1;0"
+          begin="1.12s"
+          dur="0.45s"
+          fill="freeze"/>
+
+        <animateTransform
+          attributeName="transform"
+          type="translate"
+          values="0 0;17 10"
+          begin="1.12s"
+          dur="0.45s"
+          fill="freeze"/>
+      </rect>
+    </g>
+
+    <!-- ==================================== -->
+    <!-- 2-6. キャッチコピー1行目             -->
+    <!-- ==================================== -->
+
+    <g clip-path="url(#reveal1)">
+
+      <g>
+        <!-- 完成後のわずかな揺れ -->
+        <animateTransform
+          attributeName="transform"
+          type="translate"
+          values="0 0;0.7 -0.5;-0.7 0.5;0 0"
+          begin="2.5s"
+          dur="4s"
+          repeatCount="indefinite"/>
+
+        <text x="450" y="79"
+              text-anchor="middle"
+              class="game-text"
+              font-size="32"
+              stroke="#F2DAFF"
+              stroke-width="1.4"
+              fill="#FFF0FF">
+          <tspan fill="#FF00FF">技術</tspan><tspan>を組み合わせ、</tspan><tspan fill="#8A2BE2">新しいゲーム・VR体験</tspan><tspan>へ</tspan>
+        </text>
+      </g>
+    </g>
+
+    <!-- ==================================== -->
+    <!-- 2-7. 2行目のピクセルパーティクル     -->
+    <!-- ==================================== -->
+
+    <g fill="#FFB8FF">
+
+      <rect x="210" y="120"
+            width="5" height="5"
+            opacity="0">
+
+        <animate
+          attributeName="opacity"
+          values="0;1;0"
+          begin="1.55s"
+          dur="0.45s"
+          fill="freeze"/>
+
+        <animateTransform
+          attributeName="transform"
+          type="translate"
+          values="0 0;-16 -10"
+          begin="1.55s"
+          dur="0.45s"
+          fill="freeze"/>
+      </rect>
+
+      <rect x="245" y="140"
+            width="4" height="4"
+            opacity="0">
+
+        <animate
+          attributeName="opacity"
+          values="0;1;0"
+          begin="1.6s"
+          dur="0.45s"
+          fill="freeze"/>
+
+        <animateTransform
+          attributeName="transform"
+          type="translate"
+          values="0 0;-10 14"
+          begin="1.6s"
+          dur="0.45s"
+          fill="freeze"/>
+      </rect>
+
+      <rect x="652" y="118"
+            width="5" height="5"
+            opacity="0">
+
+        <animate
+          attributeName="opacity"
+          values="0;1;0"
+          begin="1.68s"
+          dur="0.45s"
+          fill="freeze"/>
+
+        <animateTransform
+          attributeName="transform"
+          type="translate"
+          values="0 0;14 -10"
+          begin="1.68s"
+          dur="0.45s"
+          fill="freeze"/>
+      </rect>
+
+      <rect x="685" y="139"
+            width="4" height="4"
+            opacity="0">
+
+        <animate
+          attributeName="opacity"
+          values="0;1;0"
+          begin="1.75s"
+          dur="0.45s"
+          fill="freeze"/>
+
+        <animateTransform
+          attributeName="transform"
+          type="translate"
+          values="0 0;14 12"
+          begin="1.75s"
+          dur="0.45s"
+          fill="freeze"/>
+      </rect>
+    </g>
+
+    <g fill="#8A2BE2">
+
+      <rect x="300" y="116"
+            width="4" height="4"
+            opacity="0">
+
+        <animate
+          attributeName="opacity"
+          values="0;1;0"
+          begin="1.65s"
+          dur="0.4s"
+          fill="freeze"/>
+
+        <animateTransform
+          attributeName="transform"
+          type="translate"
+          values="0 0;-4 -16"
+          begin="1.65s"
+          dur="0.4s"
+          fill="freeze"/>
+      </rect>
+
+      <rect x="602" y="144"
+            width="4" height="4"
+            opacity="0">
+
+        <animate
+          attributeName="opacity"
+          values="0;1;0"
+          begin="1.8s"
+          dur="0.4s"
+          fill="freeze"/>
+
+        <animateTransform
+          attributeName="transform"
+          type="translate"
+          values="0 0;6 14"
+          begin="1.8s"
+          dur="0.4s"
+          fill="freeze"/>
+      </rect>
+    </g>
+
+    <!-- ==================================== -->
+    <!-- 2-8. キャッチコピー2行目             -->
+    <!-- ==================================== -->
+
+    <g clip-path="url(#reveal2)">
+
+      <g>
+        <animateTransform
+          attributeName="transform"
+          type="translate"
+          values="0 0;-0.6 0.5;0.6 -0.5;0 0"
+          begin="2.5s"
+          dur="4.5s"
+          repeatCount="indefinite"/>
+
+        <text x="450" y="134"
+              text-anchor="middle"
+              class="game-text"
+              font-size="29"
+              fill="#FFB8FF"
+              stroke="#7F35B2"
+              stroke-width="1.5">
+          ユーザーに新しい体験と驚きを
+        </text>
+      </g>
+    </g>
+
+    <!-- ==================================== -->
+    <!-- 2-9. 実績解除ポップアップ            -->
+    <!-- ==================================== -->
+
+    <!-- フレーム完成後に表示 -->
+    <g opacity="0">
+
+      <animate
+        attributeName="opacity"
+        values="0;1;1;0"
+        begin="2.85s"
+        dur="1.1s"
+        fill="freeze"/>
+
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        values="0 -8;0 0;0 0;0 -4"
+        begin="2.85s"
+        dur="1.1s"
+        fill="freeze"/>
+
+      <!-- ポップアップ本体 -->
+      <rect x="622" y="12"
+            width="212" height="42"
+            rx="6"
+            fill="#261739"
+            stroke="#FF00FF"
+            stroke-width="2.5"/>
+
+      <!-- ピクセル装飾 -->
+      <rect x="628" y="18"
+            width="6" height="6"
+            fill="#FF00FF"/>
+
+      <rect x="636" y="18"
+            width="6" height="6"
+            fill="#8A2BE2"/>
+
+      <rect x="644" y="18"
+            width="6" height="6"
+            fill="#FFB8FF"/>
+
+      <!-- 文字 -->
+      <text x="728" y="27"
+            text-anchor="middle"
+            class="pixel-ui"
+            font-size="11"
+            fill="#FFB8FF">
+        ACHIEVEMENT!
+      </text>
+
+      <text x="728" y="44"
+            text-anchor="middle"
+            class="pixel-ui"
+            font-size="16"
+            fill="#FFF0FF">
+        QUEST START!
+      </text>
+    </g>
+
+    <!-- ==================================== -->
+    <!-- 2-10. 隠しピクセルスター             -->
+    <!-- ==================================== -->
+
+    <!-- 左上の星 -->
+    <g opacity="0" fill="#FFB8FF">
+
+      <rect x="56" y="28"
+            width="5" height="5"/>
+      <rect x="51" y="33"
+            width="5" height="5"/>
+      <rect x="61" y="33"
+            width="5" height="5"/>
+      <rect x="56" y="38"
+            width="5" height="5"/>
+
+      <animate
+        attributeName="opacity"
+        values="0;1;0"
+        begin="2.85s"
+        dur="0.55s"
+        fill="freeze"/>
+
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        values="0 3;0 -3;0 3"
+        begin="2.85s"
+        dur="0.55s"
+        fill="freeze"/>
+    </g>
+
+    <!-- 右下の星 -->
+    <g opacity="0" fill="#D7A0FF">
+
+      <rect x="834" y="139"
+            width="5" height="5"/>
+      <rect x="829" y="144"
+            width="5" height="5"/>
+      <rect x="839" y="144"
+            width="5" height="5"/>
+      <rect x="834" y="149"
+            width="5" height="5"/>
+
+      <animate
+        attributeName="opacity"
+        values="0;1;0"
+        begin="3.05s"
+        dur="0.55s"
+        fill="freeze"/>
+
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        values="0 3;0 -3;0 3"
+        begin="3.05s"
+        dur="0.55s"
+        fill="freeze"/>
+    </g>
+
+    <!-- ==================================== -->
+    <!-- 2-11. 隠しピクセルキャラクター       -->
+    <!-- ==================================== -->
+
+    <!-- 従来どおり約6秒後に一度だけ出現 -->
+    <g opacity="0">
+
+      <animate
+        attributeName="opacity"
+        values="0;0;1;1;0"
+        keyTimes="0;0.68;0.78;0.94;1"
+        begin="6.1s"
+        dur="1.15s"
+        fill="freeze"/>
+
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        values="0 6;0 0;0 2"
+        begin="6.1s"
+        dur="1.15s"
+        fill="freeze"/>
+
+      <!-- ピクセルスライム -->
+      <g transform="translate(760 122)">
+
+        <!-- 輪郭 -->
+        <rect x="0" y="18"
+              width="6" height="6"
+              fill="#7A34B5"/>
+
+        <rect x="6" y="12"
+              width="6" height="6"
+              fill="#7A34B5"/>
+
+        <rect x="12" y="6"
+              width="6" height="6"
+              fill="#7A34B5"/>
+
+        <rect x="18" y="0"
+              width="18" height="6"
+              fill="#7A34B5"/>
+
+        <rect x="36" y="6"
+              width="6" height="6"
+              fill="#7A34B5"/>
+
+        <rect x="42" y="12"
+              width="6" height="6"
+              fill="#7A34B5"/>
+
+        <rect x="48" y="18"
+              width="6" height="6"
+              fill="#7A34B5"/>
+
+        <!-- 本体 -->
+        <rect x="6" y="18"
+              width="42" height="18"
+              fill="#FF73F5"/>
+
+        <rect x="12" y="36"
+              width="30" height="6"
+              fill="#FF73F5"/>
+
+        <!-- 目 -->
+        <rect x="18" y="18"
+              width="6" height="6"
+              fill="#FFFFFF"/>
+
+        <rect x="36" y="18"
+              width="6" height="6"
+              fill="#FFFFFF"/>
+
+        <rect x="18" y="18"
+              width="3" height="3"
+              fill="#2D1846"/>
+
+        <rect x="36" y="18"
+              width="3" height="3"
+              fill="#2D1846"/>
+
+        <!-- 口 -->
+        <rect x="24" y="28"
+              width="12" height="3"
+              fill="#7A34B5"/>
+      </g>
+
+      <text x="820" y="162"
+            text-anchor="middle"
+            class="pixel-ui"
+            font-size="10"
+            fill="#FFB8FF">
+        secret?
+      </text>
+    </g>
+
+  </g>
+
+</svg>
