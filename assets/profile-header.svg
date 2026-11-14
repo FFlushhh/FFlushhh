@@ -569,7 +569,13 @@
               stroke="#F2DAFF"
               stroke-width="1.4"
               fill="#FFF0FF">
-          <tspan fill="#FF00FF">技術</tspan><tspan>を組み合わせ、</tspan><tspan fill="#8A2BE2">新しいゲーム・VR体験</tspan><tspan>へ</tspan>
+          <tspan fill="#FF00FF"
+                stroke="#301447"
+                stroke-width="2.5">技術</tspan><tspan fill="#FFF0FF"
+                stroke="#301447"
+                stroke-width="3">を組み合わせ、</tspan><tspan fill="#8A2BE2">新しいゲーム・VR体験</tspan><tspan fill="#FFF0FF"
+                stroke="#301447"
+                stroke-width="3">へ</tspan>
         </text>
       </g>
     </g>
@@ -724,8 +730,8 @@
               class="game-text"
               font-size="29"
               fill="#FFB8FF"
-              stroke="#7F35B2"
-              stroke-width="1.5">
+              stroke="#301447"
+              stroke-width="3.5">
           ユーザーに新しい体験と驚きを
         </text>
       </g>
