@@ -2,6 +2,7 @@
 
 ### *脳波🧠から、新しいゲーム・VR体験🎮へ*
 
+
 公立小松大学大学院 サステイナブルシステム科学研究科 生産システム科学専攻の大学院生です。
 
 Unity/C#によるゲーム・VR開発と、脳波（electroencephalogram：EEG）を用いたブレイン・コンピュータ・インターフェース（Brain-Computer Interface：BCI）の研究に取り組んでいます。
@@ -14,11 +15,11 @@ Unity/C#によるゲーム・VR開発と、脳波（electroencephalogram：EEG�
 
 運動イメージに伴う脳波を対象に、機械学習による解析とゲーム・VR操作への応用を研究しています。
 
-**学術活動・実績**
+**受賞・研究発表**
 
-- **2026年3月：** [電子情報通信学会 MBE研究会](https://ken.ieice.org/ken/program/index.php?lang=jpn&layout=html2&mode=program&tgid=IEICE-MBE&tgs_regid=96f6e32f93936172382425cbeccaa63ffb5134ef9641a0febd8dfc5bbae5908e)で研究発表
-- **2026年9月：** [第25回情報科学技術フォーラム（FIT2026）](https://www.ipsj.or.jp/event/fit/fit2026/abstract/data/html/program/g.html)で研究発表（CG-002）
 - **2025年度（2026年3月受賞）：** [計測自動制御学会（SICE）優秀学生賞](https://www.sice.jp/wp-content/uploads/sice_superior_student_award_2025.pdf)を受賞
+- **2026年3月：** [電子情報通信学会 MBE研究会](https://ken.ieice.org/ken/program/index.php?lang=jpn&layout=text&mode=program&tgid=IEICE-MBE&tgs_regid=96f6e32f93936172382425cbeccaa63ffb5134ef9641a0febd8dfc5bbae5908e)で研究発表
+- **2026年9月：** [第25回情報科学技術フォーラム（FIT2026）](https://www.ipsj.or.jp/event/fit/fit2026/abstract/data/html/program/g.html)で研究発表（CG-002）
 
 ## ゲーム・VR開発
 
@@ -26,13 +27,13 @@ UnityとC#を中心に、2DゲームやVRアプリケーションを開発して
 
 ### 『いいね』しろっ！
 
-2026年7〜8月に開催された第36回Unity 1週間ゲームジャムで、3人チームで制作した2D写真撮影ゲームです。
+2026年7〜8月に開催された第36回 Unity 1週間ゲームジャムで、3人チームで制作した2D写真撮影ゲームです。
 
 制限時間内に動く被写体を撮影し、架空のSNSで「いいね」を集めます。
 
 - **使用技術：** Unity、C#、Unity Input System、UniTask、unityroom-sdk
 - **主な担当：** ピンボケ演出、0点時のリザルト演出、BGM/SE制御の改善、unityroomへのスコア送信など
-- **開発上の特徴：** GitHubを用いたチーム開発、機能単位の設計、Unity Test Frameworkによるテスト、GitHub Actionsによるコード品質チェック
+- **開発上の特徴：** GitHubを用いたチーム開発、機能単位の設計、Unity Test Frameworkによるテスト、GitHub ActionsによるC#コードの整形チェック・静的解析
 
 [ゲームをプレイ（unityroom）](https://unityroom.com/games/iine-shiro) | [GitHubリポジトリ](https://github.com/FFlushhh/unity1week-2026-07)
 
@@ -50,7 +51,7 @@ UnityとC#を中心に、2DゲームやVRアプリケーションを開発して
 
 ### よけろ！たいやきくん
 
-大学祭で展示したゲームを基に、操作性やゲーム体験の改善を進めているUnity製2D回避ゲームです。
+大学祭で展示したゲームを基に、個人で操作性やゲーム体験の改善を進めているUnity製2D回避ゲームです。
 
 マウスでプレイヤーを操作し、出現する敵を避けながら生存時間を伸ばします。
 
@@ -62,7 +63,7 @@ UnityとC#を中心に、2DゲームやVRアプリケーションを開発して
 **その他の開発活動**
 
 - **2025年8月：** Tokyo BCI Hackathon 2025に参加
-- **2025年12月：** 第34回Unity 1週間ゲームジャムに参加
+- **2025年12月：** 第34回 Unity 1週間ゲームジャムに参加
 - **プログラミングサークル：** サークル長として、ゲーム・アプリケーション開発や大学祭での展示活動を企画・運営（[サークルのGitHub](https://github.com/KomatsuUniversityUnityCircle)）
 
 ## 機械学習・深層学習・データ分析
@@ -71,9 +72,9 @@ Pythonを用いたデータ分析や機械学習・深層学習に取り組ん�
 
 東京大学 松尾・岩澤研究室が主催する以下の講座を修了しました。
 
-- **GCI 2025 Summer**
-- **Deep Learning基礎講座 2025 Autumn** — **優秀生に選出🏆**（最終課題4位／551名）
-- **深層生成モデル 2026 Spring**
+- **グローバル消費インテリジェンス寄付講座（GCI） 2025 Summer**
+- **Deep Learning基礎講座 2025 Autumn** — **[優秀生](https://matsuolab-lecture.notion.site/432e287af97445d5aba989553ebaf808)に選出🏆**（最終課題4位／551名）
+- **深層生成モデル Deep Learning 応用講座 2026 Spring**
 - **Physical AI 2026 基礎編**
 
 [松尾研講座 修了生インタビュー（2026年6月掲載）](https://note.com/matsuolab/n/nf294780e7823)
@@ -82,11 +83,14 @@ Pythonを用いたデータ分析や機械学習・深層学習に取り組ん�
 
 AtCoderを中心に、C++でアルゴリズムやデータ構造の学習・問題演習に取り組んでいます。
 
-**競技実績**
+**大会出場歴**
 
 - **2026年：** [第七回日本最強プログラマー学生選手権～Advance～](https://atcoder.jp/contests/jsc2026advance-final) 決勝大会に出場
-- **paiza：** Sランク
+
+**レーティング・ランク**
+
 - **AtCoder Algorithm：** 茶色（2026年11月時点）
+- **paiza：** Sランク
 
 競技プログラミング用リポジトリでは、コンテストの解答コード、アルゴリズムの実装例、VS Codeの開発環境設定などを管理しています。
 
