@@ -1,7 +1,10 @@
-# Welcome to FFlushhh's GitHub!
-
-### *脳波🧠から、新しいゲーム・VR体験🎮へ*
-
+<h1 align="center">
+  <img
+    src="./assets/profile-header.svg"
+    alt="Welcome to FFlushhh's GitHub! 技術を組み合わせ、新しいゲーム・VR体験へ。ユーザーに新しい体験と驚きを"
+    width="900"
+  />
+</h1>
 
 公立小松大学大学院 サステイナブルシステム科学研究科 生産システム科学専攻の大学院生です。
 
